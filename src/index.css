@@ -1,0 +1,752 @@
+@import "tailwindcss";
+
+/* ===== Global Theme ===== */
+:root {
+  --color-bg-start: #FFFBEB;
+  --color-bg-end: #FDE68A;
+  --color-primary: #F97316;
+  --color-primary-hover: #EA580C;
+  --color-secondary: #0EA5E9;
+  --color-secondary-hover: #0284C7;
+  --color-text-heading: #1E293B;
+  --color-text-body: #334155;
+  --color-card-bg: #FFFFFF;
+  --color-card-border: #E2E8F0;
+}
+
+/* ===== Page Background (Default) ===== */
+body {
+  background: radial-gradient(circle at center, #0f766e, #0f172a);
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text-body);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Typography ===== */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-heading);
+  margin-bottom: 0.75rem;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 500;
+  color: var(--color-text-heading);
+}
+
+/* ===== Labels ===== */
+label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-heading);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+/* ===== Inputs ===== */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-card-border);
+  border-radius: 0.75rem;
+  outline: none;
+  font-size: 0.95rem;
+  color: var(--color-text-body);
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 1rem;
+}
+
+input:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(249, 115, 22, 0.3);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: var(--color-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(14, 165, 233, 0.3);
+}
+
+/* ===== Links ===== */
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Card ===== */
+.card {
+  background: #1e293b; /* dark slate */
+  color: #f1f5f9;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Headings inside card */
+.card h1, 
+.card h2, 
+.card h3 {
+  color: #F8FAFC;
+}
+
+/* Labels inside card */
+.card label {
+  color: #E2E8F0;
+}
+
+/* Inputs inside card */
+.card input[type="text"],
+.card input[type="password"],
+.card input[type="email"] {
+  background: #334155; /* slate-700 */
+  border: 1px solid #475569; /* slate-600 */
+  color: #F8FAFC;
+}
+
+.card input:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.4);
+}
+
+/* ===== Form Container ===== */
+.form-group {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+/* ===== Login Page Specific ===== */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #0f766e, #0f172a);
+}
+
+.icon-cap {
+  width: 4rem;   /* bigger size */
+  height: 4rem;
+  color: #22d3ee; /* cyan-400 */
+  margin-bottom: 1rem;
+  transform: rotate(-15deg); /* diagonal tilt */
+}
+
+.card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f8fafc;
+  text-align: center;
+}
+/* ===== Error Message ===== */
+.error-message {
+  background: rgba(220, 38, 38, 0.1); /* red-600 soft background */
+  color: #f87171; /* red-400 text */
+  border: 1px solid #dc2626; /* red-600 border */
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-align: left;
+}
+/* ===== Form Footer ===== */
+.form-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #cbd5e1; /* slate-300 */
+}
+
+.form-footer a {
+  color: #0EA5E9; /* cyan-500 */
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+.icon-cap,
+.logo-icon {                     /* support both class names just in case */
+  display: inline-block;
+  width: 72px;                   /* size (adjust if you want bigger/smaller) */
+  height: 72px;
+  color: #ffffff !important;     /* white cap (use !important only for reliability) */
+  margin-bottom: 1.25rem;
+  transform: rotate(-15deg);     /* tilt counter-clockwise; use positive degrees for opposite */
+  transform-origin: center center;
+}
+
+/* Ensure SVG inside the component adopts the currentColor for stroke/fill */
+.icon-cap svg,
+.logo-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;  /* lucide uses stroke, so map stroke to CSS color */
+  fill: none;
+}
+/* Full page layout */
+.full-page-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw; /* full screen */
+  margin: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  padding: 0.75rem 1rem;
+  height: 60px;
+  flex-shrink: 0;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-logo {
+  color: #f97316;
+  width: 24px;
+  height: 24px;
+}
+
+.navbar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.btn-logout {
+  background: #f97316;
+  border: none;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Sidebar + Main wrapper */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: calc(100vh - 60px); /* subtract navbar height */
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #1e293b;
+  color: white;
+  width: 240px;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.collapse-btn {
+  background: none;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0.5rem;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.sidebar-nav a:hover {
+  background: #334155;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  background: radial-gradient(circle at center, #0f766e, #0f172a);
+  font-family: 'Inter', sans-serif;;
+  color: white;
+  overflow-y: auto;
+}
+/* Sub-navbar wrapper */
+.user-subnavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222; /* same as sidebar/nav for consistency */
+  padding: 10px 20px;
+  color: #fff;
+  border-bottom: 1px solid #333;
+}
+
+/* Tabs (Faculty / Students) */
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 1rem;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s, color 0.2s;
+}
+.tab-btn:hover {
+  background: #333;
+  color: #fff;
+}
+.tab-btn.active {
+  background: #ff6600; /* orange highlight */
+  color: #fff;
+}
+
+/* Search + Filter */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.controls input {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+.controls select {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+}
+/* ===== Users Page ===== */
+.users-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Sub-navbar */
+.user-subnavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b; /* same as sidebar */
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+/* Tabs */
+.user-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.user-tab {
+  background: transparent;
+  border: none;
+  color: #e2e8f0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+
+.user-tab:hover {
+  background: #334155;
+}
+
+.user-tab.active {
+  background: #f97316; /* orange */
+  color: white;
+}
+
+/* Search bar */
+.user-search input {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #475569;
+  background: #334155;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.user-search input:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.4);
+}
+/* index.css */
+
+/* Search bar styling */
+.user-subnavbar .controls input,
+.user-search input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #1e293b; /* dark background */
+  color: #f1f5f9; /* light text */
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+.user-subnavbar .controls input:focus,
+.user-search input:focus {
+  border: 1px solid #38bdf8; /* highlight cyan when focused */
+}
+
+/* Dropdown styling */
+.user-subnavbar select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #1e293b;
+  color: #f1f5f9;
+  margin-left: 10px;
+}
+/* ===== User SubNavbar ===== */
+.user-subnavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(15, 23, 42, 0.85); /* semi-transparent dark */
+  border-bottom: 1px solid #1e293b;
+}
+
+/* Tabs */
+.user-subnavbar .tabs {
+  display: flex;
+  gap: 12px;
+}
+
+.user-subnavbar .tab-btn {
+  background: transparent;
+  border: none;
+  color: #fff; /* 🔹 White text */
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-radius: 6px;
+}
+
+.user-subnavbar .tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.user-subnavbar .tab-btn.active {
+  background: #f97316; /* Blue highlight */
+  color: #fff;
+}
+
+/* Search + Filter controls */
+.user-subnavbar .controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px; /* 🔹 pushes search a little lower */
+}
+
+.user-subnavbar .controls input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 2px solid #334155; /* 🔹 Darker outline */
+  background: #1e293b; /* Dark input */
+  color: #fff; /* 🔹 White text */
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+.user-subnavbar .controls input:focus {
+  border-color: #f97316; 
+}
+
+.user-subnavbar select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 2px solid #334155; /* Darker outline */
+  background: #1e293b;
+  color: #fff;
+  outline: none;
+}
+/* ===== Action Bar ===== */
+.action-bar {
+  margin: 15px 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* ===== Standard Button ===== */
+.btn {
+  background: #2563eb;       /* Standard blue */
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background: #1d4ed8;       /* Darker blue on hover */
+}
+/* ===== Warning Button ===== */
+.btn-warning {
+  background: #f59e0b;   /* Amber */
+  color: #fff;
+    padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-warning:hover {
+  background: #d97706;   /* Darker amber */
+}
+
+/* ===== Danger Button ===== */
+.btn-danger {
+  background: #dc2626;   /* Red */
+  color: #fff;
+    padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-danger:hover {
+  background: #b91c1c;   /* Darker red */
+}
+/* Small Button (for row-level actions like edit/delete) */
+.btn-small {
+  padding: 4px 8px;
+  margin-right: 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-small:hover {
+  background: #1d4ed8;
+}
+
+/* ===== User Table ===== */
+.user-table-container {
+  margin: 20px;
+  overflow-x: auto;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e293b;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #334155;
+  color: #e2e8f0;
+  text-align: left;
+}
+
+.user-table th {
+  background: #334155;
+  font-weight: 600;
+}
+
+.user-table tr:hover {
+  background: #293548;
+}
+
+/* ===== Pagination ===== */
+.pagination {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  color: #e2e8f0;
+}
+
+.pagination button {
+  background: #2563eb;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pagination button:hover {
+  background: #1d4ed8;
+}
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 20px;
+}
+
+.chart-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 8px;
+  color: #e2e8f0;
+}
+/* ===== Settings Page ===== */
+.settings-page {
+  padding: 20px;
+  color: #e2e8f0;
+}
+
+.settings-page h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.settings-section {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.settings-section h3 {
+  margin-bottom: 10px;
+  color: #93c5fd;
+}
+
+.settings-section label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.settings-section input,
+.settings-section select {
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #fff;
+}
+
+.settings-section input[type="checkbox"] {
+  margin-right: 8px;
+  width: auto;
+}
+
+
